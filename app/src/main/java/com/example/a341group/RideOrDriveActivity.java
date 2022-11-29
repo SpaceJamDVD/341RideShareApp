@@ -15,7 +15,7 @@ public class RideOrDriveActivity extends AppCompatActivity {
     }
 
     public void onRiderButton(View view){
-        Intent intent = new Intent(this, RegistrationActivity.class);
+        Intent intent = new Intent(this, RiderDestinationEnterActivity.class);
         startActivity(intent);
     }
 

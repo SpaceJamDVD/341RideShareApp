@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">341Group</string>
+    <string name="title_activity_rider_maps">RiderMapsActivity</string>
 </resources>

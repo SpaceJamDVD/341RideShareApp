@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-//TODO: add internet and locations permissions
-//TODO: add google maps API , key not generated yet
-
 
 public class MainActivity extends AppCompatActivity {
 
