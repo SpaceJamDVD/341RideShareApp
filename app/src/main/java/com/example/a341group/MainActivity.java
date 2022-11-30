@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+// make sure to go to SDK Manager-> SDK tools and enable google play services
 
 public class MainActivity extends AppCompatActivity {
 

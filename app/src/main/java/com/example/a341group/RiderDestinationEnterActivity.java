@@ -4,23 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 //TODO: add Destination edit text to pass into RiderMapsActivity
 
 public class RiderDestinationEnterActivity extends AppCompatActivity {
+
+    EditText location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rider_destination_enter);
 
-        //SearchView locSearchView = (SearchView) findViewById(R.id.locationSearch); // inititate a search view
-        //CharSequence locquery = locSearchView.getQuery(); // get the query string currently in the text field
+        location = (EditText)findViewById(R.id.destlocation);
 
-        //SearchView destSearchView = (SearchView) findViewById(R.id.destinationSearch); // inititate a search view
-       // CharSequence destquery = destSearchView.getQuery(); // get the query string currently in the text field
     }
 
     public void onBackDestScreen(View view){
@@ -29,7 +30,11 @@ public class RiderDestinationEnterActivity extends AppCompatActivity {
     }
 
     public void onNextDestScreen(View view){
-        Intent intent = new Intent(this, RiderMapsActivity.class);
-        startActivity(intent);
+        String toBeParsed;
+        toBeParsed = "geo:0,0?q=" + location.getText().toString();
+        Uri gmmIntentUri = Uri.parse(toBeParsed);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 }

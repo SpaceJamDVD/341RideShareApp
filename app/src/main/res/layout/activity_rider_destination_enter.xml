@@ -29,25 +29,29 @@
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <SearchView
-        android:id="@+id/locationSearch"
-        android:layout_width="331dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="412dp"
-        android:queryHint="Enter Current Location"
-        app:layout_constraintBottom_toTopOf="@+id/destinationSearch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
-
-    <SearchView
-        android:id="@+id/destinationSearch"
-        android:layout_width="327dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="68dp"
-        android:queryHint="Enter desired location"
+    <EditText
+        android:id="@+id/destlocation"
+        android:layout_width="340dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="52dp"
+        android:ems="10"
+        android:hint="Enter destination"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/nextButtonDestScreen"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/riderLocation"
+        android:layout_width="342dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="52dp"
+        android:ems="10"
+        android:hint="Enter location to be picked up from"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/destlocation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

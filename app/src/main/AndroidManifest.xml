@@ -17,6 +17,20 @@
         android:theme="@style/Theme.341Group"
         tools:targetApi="31">
         <activity
+            android:name=".RiderSelectActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RiderFindDriverActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DriverFindRiderActivity"
             android:exported="false">
             <meta-data
@@ -38,10 +52,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCb0MRMg7P5UUHgej8uIDLeixnXG69A4pQ" />
 
-        <activity
-            android:name=".RiderMapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_rider_maps" />
         <activity
             android:name=".RiderDestinationEnterActivity"
             android:exported="false">

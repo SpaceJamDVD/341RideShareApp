@@ -6,24 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class DriverFindRiderActivity extends AppCompatActivity {
+public class RiderFindDriverActivity extends AppCompatActivity {
 
-    //TODO: add list of possible riders that can pass location into maps activity
-
+    //TODO: add list of Drivers from firebase
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_find_rider);
+        setContentView(R.layout.activity_rider_find_driver);
     }
 
-    public void onDriverBack(View view){
+    public void onRiderBack(View view){
         Intent intent = new Intent(this, RideOrDriveActivity.class);
         startActivity(intent);
     }
 
-    public void onDriverNext(View view){
-        Intent intent = new Intent(this, RiderMapsActivity.class);
-        startActivity(intent);
-    }
 }
