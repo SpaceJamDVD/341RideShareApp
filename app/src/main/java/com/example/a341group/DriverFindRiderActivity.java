@@ -8,8 +8,7 @@ import android.view.View;
 
 public class DriverFindRiderActivity extends AppCompatActivity {
 
-    //TODO: add list of possible riders that can pass location into maps activity
-
+    //TODO: add list of possible riders
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +21,4 @@ public class DriverFindRiderActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onDriverNext(View view){
-        Intent intent = new Intent(this, RiderMapsActivity.class);
-        startActivity(intent);
-    }
 }

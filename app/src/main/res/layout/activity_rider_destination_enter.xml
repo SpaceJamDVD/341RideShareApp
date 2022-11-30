@@ -48,7 +48,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="52dp"
         android:ems="10"
-        android:hint="Enter location to be picked up from"
+        android:hint="Enter pick-up location"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/destlocation"
         app:layout_constraintStart_toStartOf="parent" />

@@ -22,10 +22,12 @@ public class RiderSelectActivity extends AppCompatActivity {
         riderDistance = (TextView) findViewById(R.id.riderDistance);
 
         //TODO: set rider parameters from database
+        //TODO: set rider image?? imageview??
         //riderName.setText();
         //riderDistance.setText();
     }
 
+    // Takes Address of rider and opens a google maps page where the driver can get directions to the riders location
     public void onGetDirectionsToRider(View view){
         String toBeParsed;
         //TODO plumb riders location into 'location' for driver to receive directions
