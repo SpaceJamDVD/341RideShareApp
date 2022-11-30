@@ -6,26 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".RiderDestinationEnterActivity">
 
-    <EditText
-        android:id="@+id/enterDest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="520dp"
-        android:ems="10"
-        android:hint="Enter Destination"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/backButtonDestScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:text="Back"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
         android:onClick="onBackDestScreen"
+        android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,10 +22,32 @@
         android:layout_width="332dp"
         android:layout_height="64dp"
         android:layout_marginBottom="60dp"
-        android:text="Next"
         android:onClick="onNextDestScreen"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <SearchView
+        android:id="@+id/locationSearch"
+        android:layout_width="331dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="412dp"
+        android:queryHint="Enter Current Location"
+        app:layout_constraintBottom_toTopOf="@+id/destinationSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+
+    <SearchView
+        android:id="@+id/destinationSearch"
+        android:layout_width="327dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="68dp"
+        android:queryHint="Enter desired location"
+        app:layout_constraintBottom_toTopOf="@+id/nextButtonDestScreen"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

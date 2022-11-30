@@ -20,7 +20,7 @@ public class RideOrDriveActivity extends AppCompatActivity {
     }
 
     public void onDriverButton(View view){
-        Intent intent = new Intent(this, RegistrationActivity.class);
+        Intent intent = new Intent(this, DriverFindRiderActivity.class);
         startActivity(intent);
     }
 }

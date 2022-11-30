@@ -1,6 +1,7 @@
 package com.example.a341group;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,12 @@ public class RiderDestinationEnterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rider_destination_enter);
+
+        //SearchView locSearchView = (SearchView) findViewById(R.id.locationSearch); // inititate a search view
+        //CharSequence locquery = locSearchView.getQuery(); // get the query string currently in the text field
+
+        //SearchView destSearchView = (SearchView) findViewById(R.id.destinationSearch); // inititate a search view
+       // CharSequence destquery = destSearchView.getQuery(); // get the query string currently in the text field
     }
 
     public void onBackDestScreen(View view){

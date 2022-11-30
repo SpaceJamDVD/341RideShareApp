@@ -3,17 +3,13 @@ package com.example.a341group;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,7 +30,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.PlaceLikelihood;
@@ -42,17 +37,16 @@ import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * An activity that displays a map showing the place at the device's current location.
  */
-public class RiderMapsActivity extends AppCompatActivity
+public class DriverMapsActivity extends AppCompatActivity
         implements OnMapReadyCallback {
 
-    private static final String TAG = RiderMapsActivity.class.getSimpleName();
+    private static final String TAG = DriverMapsActivity.class.getSimpleName();
     private GoogleMap map;
     private CameraPosition cameraPosition;
 
@@ -326,7 +320,7 @@ public class RiderMapsActivity extends AppCompatActivity
 
                         // Show a dialog offering the user the list of likely places, and add a
                         // marker at the selected place.
-                        RiderMapsActivity.this.openPlacesDialog();
+                        DriverMapsActivity.this.openPlacesDialog();
                     }
                     else {
                         Log.e(TAG, "Exception: %s", task.getException());
@@ -403,16 +397,6 @@ public class RiderMapsActivity extends AppCompatActivity
         } catch (SecurityException e)  {
             Log.e("Exception: %s", e.getMessage());
         }
-    }
-
-    public void onSafetyMapsButton(View view){
-        Intent intent = new Intent(this, safetyActivity.class);
-        startActivity(intent);
-    }
-
-    public void onPickUpButton(View view){
-        Intent intent = new Intent(this, safetyActivity.class);
-        startActivity(intent);
     }
 }
 
