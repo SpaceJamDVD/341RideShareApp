@@ -2,6 +2,7 @@ package com.example.a341group;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,5 +31,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void onCheckSafetyPage(View view){
+        Intent intent = new Intent(this, safetyActivity.class);
+        startActivity(intent);
+    }
 }
