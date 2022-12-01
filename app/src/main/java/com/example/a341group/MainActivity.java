@@ -31,9 +31,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RideOrDriveActivity.class);
         startActivity(intent);
     }
-
-    public void onCheckSafetyPage(View view){
-        Intent intent = new Intent(this, safetyActivity.class);
-        startActivity(intent);
-    }
 }
