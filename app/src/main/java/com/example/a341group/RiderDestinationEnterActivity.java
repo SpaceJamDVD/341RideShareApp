@@ -30,11 +30,14 @@ public class RiderDestinationEnterActivity extends AppCompatActivity {
     }
 
     public void onNextDestScreen(View view){
-        String toBeParsed;
-        toBeParsed = "geo:0,0?q=" + location.getText().toString();
-        Uri gmmIntentUri = Uri.parse(toBeParsed);
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
+        Intent intent = new Intent(this, RiderGotDriver.class);
+        startActivity(intent);
     }
 }
+
+    //String toBeParsed;
+       // toBeParsed = "geo:0,0?q=" + location.getText().toString();
+          //      Uri gmmIntentUri = Uri.parse(toBeParsed);
+            //   Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+             //   mapIntent.setPackage("com.google.android.apps.maps");
+             //   startActivity(mapIntent);

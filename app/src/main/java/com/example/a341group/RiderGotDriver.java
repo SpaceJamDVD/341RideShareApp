@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
-public class ratingAfterRideActivity extends AppCompatActivity {
+public class RiderGotDriver extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_rider_got_driver);
     }
 
-
+    public void onPickedUpButton(View view){
+        Intent intent = new Intent(this,RiderArrivedActivity.class);
+        startActivity(intent);
+    }
 }

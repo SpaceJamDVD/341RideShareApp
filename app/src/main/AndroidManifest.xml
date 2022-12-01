@@ -17,6 +17,20 @@
         android:theme="@style/Theme.341Group"
         tools:targetApi="31">
         <activity
+            android:name=".RiderArrivedActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RiderGotDriver"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RiderSelectActivity"
             android:exported="false">
             <meta-data
@@ -82,7 +96,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ratingAfterRideActivity"
+            android:name=".RatingAfterRideActivity"
             android:exported="false"
             android:parentActivityName=".RiderMapsActivity">
             <meta-data

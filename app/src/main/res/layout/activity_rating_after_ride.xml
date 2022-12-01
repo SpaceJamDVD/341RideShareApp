@@ -12,6 +12,7 @@
         android:layout_marginStart="172dp"
         android:layout_marginBottom="44dp"
         android:text="Submit and go back to beginning"
+        android:onClick="onSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

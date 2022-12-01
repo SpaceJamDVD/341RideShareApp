@@ -29,12 +29,12 @@ public class RiderSelectActivity extends AppCompatActivity {
 
     // Takes Address of rider and opens a google maps page where the driver can get directions to the riders location
     public void onGetDirectionsToRider(View view){
-        String toBeParsed;
+        //String toBeParsed;
         //TODO plumb riders location into 'location' for driver to receive directions
         //toBeParsed = "geo:0,0?q=" + location.getText().toString();
         //Uri gmmIntentUri = Uri.parse(toBeParsed);
         //Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        //mapIntent.setPackage("com.google.android.apps.maps");
+       // mapIntent.setPackage("com.google.android.apps.maps");
         //startActivity(mapIntent);
     }
 
