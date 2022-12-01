@@ -81,7 +81,29 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".DriverConfirmRider"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DriverEnrouteActivity"
+            android:exported="false"
+            android:parentActivityName=".DriverConfirmRider">>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RegistrationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DriverSummary"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
