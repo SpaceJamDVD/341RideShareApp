@@ -19,7 +19,7 @@ public class DriverSummary extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void complete(View view){
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
 
