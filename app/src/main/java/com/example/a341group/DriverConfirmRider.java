@@ -19,15 +19,18 @@ public class DriverConfirmRider extends AppCompatActivity {
         riderInfos = intent.getStringArrayExtra("riderInfo");
         TextView ride = (TextView) findViewById(R.id.confirmRideText);
         ride.setText(riderInfos[0]+"'s ride");
-
     }
     public void checkRoute(View view){
-        String toBeParsed;
-        toBeParsed = "geo:0,0?q=" + riderInfos[1];
-        Uri gmmIntentUri = Uri.parse(toBeParsed);
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
+//        String toBeParsed;
+//        toBeParsed = "geo:0,0?q=" + riderInfos[1];
+//        Uri gmmIntentUri = Uri.parse(toBeParsed);
+//        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+//        mapIntent.setPackage("com.google.android.apps.maps");
+//        startActivity(mapIntent);
+        //sends location to activity map
+        Intent i = new Intent(this, MapActivity.class);
+        i.putExtra("riderInfo",riderInfos);
+        startActivity(i);
     }
     public void confirmPickup(View view){
         String toBeParsed;
@@ -35,6 +38,11 @@ public class DriverConfirmRider extends AppCompatActivity {
         Uri gmmIntentUri = Uri.parse(toBeParsed);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         Intent i = new Intent(this, DriverEnrouteActivity.class);
+        startActivity(i);
+    }
+    public void maptest(View view){
+        Intent i = new Intent(this, MapActivity.class);
+
         startActivity(i);
     }
 
