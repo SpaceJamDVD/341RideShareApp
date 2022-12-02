@@ -5,11 +5,13 @@ public class PassengerCard {
     private String name;
     private String location;
     private int rideSharesCompleted;
+    private String destination;
 
-    public PassengerCard(String name, String location, int rideSharesCompleted){
+    public PassengerCard(String name, String location, String destination, int rideSharesCompleted){
         this.name = name;
         this.location = location;
         this.rideSharesCompleted = rideSharesCompleted;
+        this.destination=destination;
     }
 
     public int getRideSharesCompleted() {
@@ -31,7 +33,9 @@ public class PassengerCard {
     public String getName() {
         return name;
     }
-
+    public String getDestination(){
+        return this.destination;
+    }
     public void setName(String name) {
         this.name = name;
     }

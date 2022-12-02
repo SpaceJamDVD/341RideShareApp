@@ -7,12 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -31,71 +34,75 @@ import java.util.List;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback{
     private GoogleMap mMap;
-    private MarkerOptions place1, place2;
     Button getDirection;
     private Polyline currentPolyline;
     String[] riderInfos;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getDirection=(Button)findViewById(R.id.mapConfirmDropoff);
         Intent intent = getIntent();
-        riderInfos = new String[]{"Gus H", "UBCO", "Rutland", "3:30PM"};
-        getDirection = findViewById(R.id.btnGetDirection);
-        getDirection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //new FetchURL(MapActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
-            }
-        });
+        riderInfos = intent.getStringArrayExtra("riderInfo");
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.mapNearBy);
         mapFragment.getMapAsync( this);
 //        new FetchURL(MapActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(this, DriverConfirmRider.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-        // Add polylines to the map.
-        // Polylines are useful to show a route or some other connection between points.
-        LatLng start= new LatLng(-35.016, 143.321);
-        LatLng end = new LatLng(-34.747, 145.592);
-        place1 = new MarkerOptions().position(start).title("Location 1");
-        //place1 = new MarkerOptions().position(new LatLng(-35.016, 143.321)).title("Location 1");
-        place2 = new MarkerOptions().position(end).title("Location 2");
-        Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
-                .clickable(true)
-                .add(start, end));
-
-        // Position the map's camera near Alice Springs in the center of Australia,
-        // and set the zoom factor so most of Australia shows on the screen.
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(start, 8));
-        googleMap.getUiSettings().setZoomControlsEnabled(true);
-        googleMap.addMarker(place1);
-        googleMap.addMarker(place2);
-    }
-    public LatLng getLocationFromAddress(Context context, String strAddress) {
-
-        Geocoder coder = new Geocoder(context);
-        List<Address> address;
-        LatLng p1 = null;
-
+        mMap=googleMap;
+        String start= riderInfos[1]+", Kelowna";
+        String end = riderInfos[2]+", Kelonwa";
+        List<Address> addressList = null;
+        Geocoder geocoder = new Geocoder(this);
         try {
-            // May throw an IOException
-            address = coder.getFromLocationName(strAddress, 5);
-            if (address == null) {
-                return null;
-            }
+            addressList = geocoder.getFromLocationName(start, 1);
 
-            Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
-
-        } catch (IOException ex) {
-
-            ex.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        Address address = addressList.get(0);
+        LatLng startLL = new LatLng(address.getLatitude(), address.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(startLL).title(start));
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(startLL));
+        try {
+            addressList = geocoder.getFromLocationName(end, 1);
 
-        return p1;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        address = addressList.get(0);
+        LatLng endLL = new LatLng(address.getLatitude(), address.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(endLL).title(end));
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(endLL));
+
+
+        mMap.addPolyline(new PolylineOptions()
+                .clickable(true)
+                .add(startLL, endLL)
+                .color(Color.BLUE)
+                .geodesic(true));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startLL, 11));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+    }
+    public void mapConfirmDropoff(View view){
+        Intent i = new Intent(this, DriverSummary.class);
+        i.putExtra("riderInfo",riderInfos);
+        startActivity(i);
     }
 }

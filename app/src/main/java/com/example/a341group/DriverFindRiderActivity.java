@@ -19,10 +19,10 @@ public class DriverFindRiderActivity extends AppCompatActivity {
         ListView myListView = findViewById(R.id.passengers);
 
         ArrayList<PassengerCard> passengerCards = new ArrayList<>();
-        passengerCards.add(new PassengerCard("Jason", "Hollywood Road South", 10));
-        passengerCards.add(new PassengerCard("Quin", "Hollywood Road West", 20));
-        passengerCards.add(new PassengerCard("Kevin", "Hollywood Road North", 30));
-        passengerCards.add(new PassengerCard("Gus", "Hollywood Road East", 40));
+        passengerCards.add(new PassengerCard("Jason", "UBCO", "Rutland",10));
+        passengerCards.add(new PassengerCard("Quin", "UBCO", "Airport",20));
+        passengerCards.add(new PassengerCard("Kevin", "Airport", "Rutland",30));
+        passengerCards.add(new PassengerCard("Gus", "Rutland", "Airport",40));
 
         PassengerCardAdapter adapter = new PassengerCardAdapter(this, R.layout.passenger_card, passengerCards);
         myListView.setAdapter(adapter);

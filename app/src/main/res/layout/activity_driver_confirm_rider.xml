@@ -17,17 +17,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/maptest"
-        android:layout_width="228dp"
-        android:layout_height="129dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="292dp"
-        android:onClick="maptest"
-        android:text="Map test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/checkRoute"
         android:layout_width="228dp"
         android:layout_height="129dp"
