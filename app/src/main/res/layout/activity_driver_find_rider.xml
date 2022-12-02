@@ -15,7 +15,7 @@
         android:background="@drawable/bottom_rounded"
         android:orientation="vertical"
         android:paddingLeft="40dp"
-        android:paddingTop="20dp"
+        android:paddingTop="60dp"
         android:paddingRight="40dp"
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toStartOf="@+id/passengers"

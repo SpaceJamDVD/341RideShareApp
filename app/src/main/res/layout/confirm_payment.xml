@@ -13,12 +13,13 @@
         android:fontFamily="@font/poppins_semibold"
         android:lineHeight="50dp"
         android:paddingLeft="40dp"
-        android:paddingTop="80dp"
+        android:paddingTop="140dip"
         android:paddingRight="40dp"
         android:text="Confirm Payment"
         android:textColor="@color/primary_black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
