@@ -4,22 +4,16 @@ public class PassengerCard {
 
     private String name;
     private String location;
-    private int rideSharesCompleted;
+    private int completedRideshares;
     private String destination;
+    private String documentUID;
 
-    public PassengerCard(String name, String location, String destination, int rideSharesCompleted){
+    public PassengerCard(String name, String location, String destination, int completedRideshares, String documentUID){
         this.name = name;
         this.location = location;
-        this.rideSharesCompleted = rideSharesCompleted;
-        this.destination=destination;
-    }
-
-    public int getRideSharesCompleted() {
-        return rideSharesCompleted;
-    }
-
-    public void setRideSharesCompleted(int rideSharesCompleted) {
-        this.rideSharesCompleted = rideSharesCompleted;
+        this.completedRideshares = completedRideshares;
+        this.destination = destination;
+        this.documentUID = documentUID;
     }
 
     public String getLocation() {
@@ -33,10 +27,28 @@ public class PassengerCard {
     public String getName() {
         return name;
     }
+
     public String getDestination(){
         return this.destination;
     }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCompletedRideshares() {
+        return completedRideshares;
+    }
+
+    public void setCompletedRideshares(int completedRideshares) {
+        this.completedRideshares = completedRideshares;
+    }
+
+    public String getDocumentUID() {
+        return documentUID;
+    }
+
+    public void setDocumentUID(String documentUID) {
+        this.documentUID = documentUID;
     }
 }

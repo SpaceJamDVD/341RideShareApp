@@ -29,6 +29,7 @@ public class Register extends AppCompatActivity {
     EditText usernameInput;
     EditText emailInput;
     EditText passwordInput;
+    EditText fullNameInput;
 
     Button registerBtn;
     ProgressBar progressBar;
@@ -42,6 +43,7 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         moveToLoginBtn = findViewById(R.id.moveToLoginBtn);
+        fullNameInput = findViewById(R.id.fullNameInput);
         usernameInput = findViewById(R.id.usernameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
@@ -59,6 +61,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void registerUser(){
+        String fullName = fullNameInput.getText().toString().trim();
         String username = usernameInput.getText().toString().trim();
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
@@ -95,7 +98,7 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user = new User(username, email);
+                            User user = new User(username, email, fullName);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

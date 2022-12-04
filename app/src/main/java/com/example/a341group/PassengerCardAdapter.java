@@ -27,7 +27,7 @@ public class PassengerCardAdapter extends ArrayAdapter<PassengerCard> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
         String name = getItem(position).getName();
         String location = getItem(position).getLocation();
-        int rideSharesCompleted = getItem(position).getRideSharesCompleted();
+        int rideSharesCompleted = getItem(position).getCompletedRideshares();
 
         LayoutInflater inflater = LayoutInflater.from(myContext);
 

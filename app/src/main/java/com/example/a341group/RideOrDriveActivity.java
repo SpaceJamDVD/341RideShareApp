@@ -15,12 +15,12 @@ public class RideOrDriveActivity extends AppCompatActivity {
     }
 
     public void onRiderButton(View view){
-        Intent intent = new Intent(this, RiderDestinationEnterActivity.class);
+        Intent intent = new Intent(this, PassengerSearch.class);
         startActivity(intent);
     }
 
     public void onDriverButton(View view){
-        Intent intent = new Intent(this, DriverFindRiderActivity.class);
+        Intent intent = new Intent(this, DriverSearch.class);
         startActivity(intent);
     }
 }
