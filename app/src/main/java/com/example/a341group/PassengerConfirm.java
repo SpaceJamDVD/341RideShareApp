@@ -1,40 +1,43 @@
 package com.example.a341group;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+public class PassengerConfirm extends AppCompatActivity {
 
-public class RatingAfterRideActivity extends AppCompatActivity {
 
     TextView driverText;
-    TextView reportText;
+
     Button confirmBtn;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_after_ride);
+        setContentView(R.layout.passenger_confirm);
 
         driverText = findViewById(R.id.driverText);
         confirmBtn = findViewById(R.id.confirmBtn);
-        reportText = findViewById(R.id.reportText);
 
         Intent receivedIntent = getIntent();
         String name = receivedIntent.getStringExtra("name");
 
-        driverText.setText(name);
-        reportText.setText("Report " + name);
+        driverText.setText(name + " will pick you up!");
 
         confirmBtn.setOnClickListener(v -> {
-            startActivity(new Intent(RatingAfterRideActivity.this, RideOrDriveActivity.class));
+            Intent intent = new Intent(PassengerConfirm.this, PassengerArrive.class);
+            intent.putExtra("name", name);
+            startActivity(intent);
             finish();
         });
-        reportText.setOnClickListener(v -> {
 
-        });
     }
+
 }

@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/driverText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Johnny will pick you up!"
@@ -35,7 +35,7 @@
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/primary_black"
             android:fontFamily="@font/poppins_medium"
-            android:text="I'll be waiting!"
+            android:text="I got picked up!"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp" />

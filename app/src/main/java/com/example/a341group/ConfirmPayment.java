@@ -76,26 +76,33 @@ public class ConfirmPayment extends AppCompatActivity {
         }
         confirmBtn = findViewById(R.id.confirmPaymentBtn);
         confirmBtn.setOnClickListener(v -> {
-            for (String documentUID : activePassengers){
-                passengerDbRef.child(documentUID).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Passenger passenger = snapshot.getValue(Passenger.class);
-                        incrementRideShares(passenger.getPassengerUID());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-            }
-            incrementRideShares(userUID);
-            startActivity(new Intent(ConfirmPayment.this, RideOrDriveActivity.class));
-            finish();
+            finishRideShare();
         });
         setPayments();
     }
+
+    private void finishRideShare(){
+        for (String documentUID : activePassengers){
+            passengerDbRef.child(documentUID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Passenger passenger = snapshot.getValue(Passenger.class);
+                    snapshot.getRef().removeValue();
+                    incrementRideShares(passenger.getPassengerUID());
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        incrementRideShares(userUID);
+        startActivity(new Intent(ConfirmPayment.this, RideOrDriveActivity.class));
+        finish();
+    }
+
+
 
     private void setPayments(){
         adapter = new PassengerPaymentAdapter(this, R.layout.passenger_payment, payments);

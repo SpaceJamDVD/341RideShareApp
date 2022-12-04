@@ -91,11 +91,13 @@ public class PassengerSearch extends AppCompatActivity {
             startLocationInput.requestFocus();
             return;
         }
+
         if (endLocation.isEmpty()){
             endLocationInput.setError("End location is required!");
             endLocationInput.requestFocus();
             return;
         }
+
         if (pickupTime.isEmpty()){
             pickupTimeInput.setError("Pickup time is required!");
             pickupTimeInput.requestFocus();
@@ -103,12 +105,13 @@ public class PassengerSearch extends AppCompatActivity {
         }
 
         Passenger passenger = new Passenger(fullName, startLocation, endLocation, pickupTime, completedRideshares, fullName.length(), "", userUID);
-
-        passengerDbRef.push().setValue(passenger).addOnCompleteListener(new OnCompleteListener<Void>() {
+        String documentId = passengerDbRef.push().getKey();
+        passengerDbRef.child(documentId).setValue(passenger).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Intent intent = new Intent(PassengerSearch.this, PassengerWait.class);
+                    intent.putExtra("documentId", documentId);
                     intent.putExtra("startLocation", startLocation);
                     intent.putExtra("endLocation", endLocation);
                     intent.putExtra("pickupTime", pickupTime);
