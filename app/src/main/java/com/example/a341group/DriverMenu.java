@@ -75,10 +75,6 @@ public class DriverMenu extends AppCompatActivity {
 
         adapter = new PassengerCardAdapter(this, R.layout.passenger_card, passengerCards);
         myListView.setAdapter(adapter);
-        if (myListView.getAdapter().getCount()==0){
-
-            Toast.makeText(getApplicationContext(), "No passengers currently", Toast.LENGTH_LONG).show();
-        }
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
