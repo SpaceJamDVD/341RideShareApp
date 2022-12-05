@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,6 +74,15 @@ public class DriverMenu extends AppCompatActivity {
 
         adapter = new PassengerCardAdapter(this, R.layout.passenger_card, passengerCards);
         myListView.setAdapter(adapter);
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String uid = passengerCards.get(i).getDocumentUID();
+                Intent intent = new Intent(DriverMenu.this, DriverViewRoute.class);
+                intent.putExtra("documentId", uid);
+                startActivity(intent);
+            }
+        });
 
         Button hereBtn = findViewById(R.id.hereBtn);
         hereBtn.setOnClickListener(v -> {

@@ -94,14 +94,14 @@
                         android:text="Hollywood Road North" />
 
                     <TextView
-                        android:fontFamily="@font/poppins_light"
-                        android:textSize="12sp"
-                        android:textColor="@color/primary_black"
                         android:id="@+id/time"
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:layout_weight="1"
-                        android:text="Estimated 2.5 minutes from you" />
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Wants to get picked up at 8:00 AM"
+                        android:textColor="@color/primary_black"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </LinearLayout>

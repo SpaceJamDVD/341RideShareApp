@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Your rideshare details"
+            android:text="You're looking for..."
             android:textColor="@color/primary_black"
             android:textSize="24sp" />
 
