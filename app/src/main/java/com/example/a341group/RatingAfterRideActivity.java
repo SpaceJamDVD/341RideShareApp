@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ public class RatingAfterRideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_after_ride);
+        setContentView(R.layout.passenger_rate_driver);
 
         driverText = findViewById(R.id.driverText);
         confirmBtn = findViewById(R.id.confirmBtn);

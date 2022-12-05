@@ -10,12 +10,13 @@ public class Passenger {
     private int rideCost;
     private String driverUID;
     private String passengerUID;
+    private String driverLocation;
 
     Passenger(){
 
     }
 
-    Passenger(String name, String startLocation, String endLocation, String pickupTime, int completedRideshares, int rideCost, String driverUID, String passengerUID){
+    Passenger(String name, String startLocation, String endLocation, String pickupTime, int completedRideshares, int rideCost, String driverUID, String passengerUID, String driverLocation){
         this.name = name;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
@@ -24,6 +25,7 @@ public class Passenger {
         this.rideCost = rideCost;
         this.driverUID = driverUID;
         this.passengerUID = passengerUID;
+        this.driverLocation = driverLocation;
     }
 
     public String getStartLocation() {
@@ -88,5 +90,13 @@ public class Passenger {
 
     public void setPassengerUID(String passengerUID) {
         this.passengerUID = passengerUID;
+    }
+
+    public String getDriverLocation() {
+        return driverLocation;
+    }
+
+    public void setDriverLocation(String driverLocation) {
+        this.driverLocation = driverLocation;
     }
 }

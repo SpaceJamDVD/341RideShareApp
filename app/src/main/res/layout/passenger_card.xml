@@ -97,7 +97,7 @@
                         android:fontFamily="@font/poppins_light"
                         android:textSize="12sp"
                         android:textColor="@color/primary_black"
-                        android:id="@+id/textView8"
+                        android:id="@+id/time"
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:layout_weight="1"

@@ -28,6 +28,7 @@ public class PassengerCardAdapter extends ArrayAdapter<PassengerCard> {
         String name = getItem(position).getName();
         String location = getItem(position).getLocation();
         int rideSharesCompleted = getItem(position).getCompletedRideshares();
+        String time = getItem(position).getPickupTime();
 
         LayoutInflater inflater = LayoutInflater.from(myContext);
 
@@ -36,10 +37,12 @@ public class PassengerCardAdapter extends ArrayAdapter<PassengerCard> {
         TextView tvName = convertView.findViewById(R.id.passengerName);
         TextView tvLocation = convertView.findViewById(R.id.passengerLocation);
         TextView tvRideSharesCompleted = convertView.findViewById(R.id.rideSharesCompleted);
+        TextView tvTime = convertView.findViewById(R.id.time);
 
         tvName.setText(name);
         tvLocation.setText(location);
         tvRideSharesCompleted.setText(rideSharesCompleted + " Rideshares Completed!");
+        tvTime.setText("Wants to get picked up at " + time);
 
         return convertView;
     }

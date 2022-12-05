@@ -32,7 +32,8 @@ public class PassengerWait extends AppCompatActivity {
     TextView pickupTimeInput;
 
     TextView changeSearchBtn;
-    int i;
+
+    String documentId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,18 +49,18 @@ public class PassengerWait extends AppCompatActivity {
         changeSearchBtn = findViewById(R.id.changeSearchBtn);
 
         Intent intent = getIntent();
-        String documentId = intent.getStringExtra("documentId");
+        documentId = intent.getStringExtra("documentId");
         String startLocation = intent.getStringExtra("startLocation");
         String endLocation = intent.getStringExtra("endLocation");
         String pickupTime = intent.getStringExtra("pickupTime");
 
-        i = 0;
+
         passengerDbRef.child(documentId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Passenger passenger = snapshot.getValue(Passenger.class);
 
-                if (!passenger.getDriverUID().equals("")){
+                if (!passenger.getDriverUID().equals("") && !passenger.getDriverLocation().equals("")){
                     userDbRef.child(passenger.getDriverUID()).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -67,6 +68,7 @@ public class PassengerWait extends AppCompatActivity {
 
                             if (user != null){
                                 Intent intent = new Intent(PassengerWait.this, PassengerConfirm.class);
+                                intent.putExtra("documentId", documentId);
                                 intent.putExtra("name", user.getFullName());
                                 startActivity(intent);
                             }
@@ -91,12 +93,9 @@ public class PassengerWait extends AppCompatActivity {
         pickupTimeInput.setText(pickupTime);
 
         changeSearchBtn.setOnClickListener(v -> {
-            backToChoice();
+            finish();
         });
 
     }
 
-    private void backToChoice(){
-        startActivity(new Intent(PassengerWait.this, PassengerSearch.class));
-    }
 }

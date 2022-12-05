@@ -53,7 +53,7 @@ public class DriverMenu extends AppCompatActivity {
                     Passenger passenger = snapshot.getValue(Passenger.class);
 
                     if (passenger != null){
-                        PassengerCard passengerCard = new PassengerCard(passenger.getName(), passenger.getStartLocation(), passenger.getEndLocation(), passenger.getCompletedRideshares(), documentUID);
+                        PassengerCard passengerCard = new PassengerCard(passenger.getName(), passenger.getStartLocation(), passenger.getEndLocation(), passenger.getCompletedRideshares(), documentUID, passenger.getPickupTime());
                         passengerCards.add(passengerCard);
                     }
 

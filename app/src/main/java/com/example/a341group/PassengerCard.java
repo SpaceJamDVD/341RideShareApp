@@ -7,13 +7,15 @@ public class PassengerCard {
     private int completedRideshares;
     private String destination;
     private String documentUID;
+    private String pickupTime;
 
-    public PassengerCard(String name, String location, String destination, int completedRideshares, String documentUID){
+    public PassengerCard(String name, String location, String destination, int completedRideshares, String documentUID, String pickupTime){
         this.name = name;
         this.location = location;
         this.completedRideshares = completedRideshares;
         this.destination = destination;
         this.documentUID = documentUID;
+        this.pickupTime = pickupTime;
     }
 
     public String getLocation() {
@@ -50,5 +52,13 @@ public class PassengerCard {
 
     public void setDocumentUID(String documentUID) {
         this.documentUID = documentUID;
+    }
+
+    public String getPickupTime() {
+        return pickupTime;
+    }
+
+    public void setPickupTime(String pickupTime) {
+        this.pickupTime = pickupTime;
     }
 }
