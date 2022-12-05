@@ -161,6 +161,7 @@ public class PassengerSearch extends AppCompatActivity implements OnMapReadyCall
                     intent.putExtra("endLocation", endLocation);
                     intent.putExtra("pickupTime", pickupTime);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(PassengerSearch.this, "Failed to search!", Toast.LENGTH_LONG).show();
                 }

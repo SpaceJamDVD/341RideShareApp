@@ -71,6 +71,7 @@ public class PassengerWait extends AppCompatActivity {
                                 intent.putExtra("documentId", documentId);
                                 intent.putExtra("name", user.getFullName());
                                 startActivity(intent);
+                                finish();
                             }
                         }
 
