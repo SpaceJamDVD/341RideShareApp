@@ -121,7 +121,7 @@
                         android:paddingTop="0dp"
                         android:paddingBottom="0dp"
                         android:paddingLeft="0dp"
-                        android:hint="Pickup Time"
+                        android:hint="Pickup Time (Example: 3:30pm)"
                         android:inputType="textPersonName"
                         android:fontFamily="@font/poppins_semibold"
                         android:textSize="16sp"

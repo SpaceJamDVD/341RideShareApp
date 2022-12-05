@@ -8,6 +8,22 @@
     android:background="@drawable/background"
     tools:context=".RideOrDriveActivity">
 
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:autoLink="all"
+        android:backgroundTint="@color/quantum_white_100"
+        android:fontFamily="@font/poppins_regular"
+        android:onClick="logout"
+        android:text="logOut"
+        android:textColor="@color/primary_black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
@@ -63,15 +79,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
 
-    <TextView
-        android:id="@+id/needHelpBtn"
+    <Button
+        android:id="@+id/needHelp"
+        android:backgroundTint="@color/primary_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/help_text"
+        android:text="need help?"
+        android:autoLink="all"
         android:textColor="@color/primary_black"
         android:textSize="16sp"
+        android:onClick="needHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn2" />

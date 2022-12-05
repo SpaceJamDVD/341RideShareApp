@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -74,6 +75,10 @@ public class DriverMenu extends AppCompatActivity {
 
         adapter = new PassengerCardAdapter(this, R.layout.passenger_card, passengerCards);
         myListView.setAdapter(adapter);
+        if (myListView.getAdapter().getCount()==0){
+
+            Toast.makeText(getApplicationContext(), "No passengers currently", Toast.LENGTH_LONG).show();
+        }
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -86,7 +91,7 @@ public class DriverMenu extends AppCompatActivity {
 
         Button hereBtn = findViewById(R.id.hereBtn);
         hereBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(DriverMenu.this, ConfirmPayment.class);
+            Intent intent = new Intent(DriverMenu.this, DriverSearch.class);
             intent.putStringArrayListExtra("activePassengers", activePassengers);
             startActivity(intent);
             finish();
@@ -102,4 +107,5 @@ public class DriverMenu extends AppCompatActivity {
             finish();//Remove for ESC
         });
     }
+
 }
