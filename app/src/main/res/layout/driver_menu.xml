@@ -135,7 +135,7 @@
             android:background="@drawable/rounded_corners"
             android:backgroundTint="@color/primary_black"
             android:fontFamily="@font/poppins_medium"
-            android:text="Change details"
+            android:text="Confirm dropoff"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"

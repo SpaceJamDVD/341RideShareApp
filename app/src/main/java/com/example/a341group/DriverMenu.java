@@ -87,7 +87,7 @@ public class DriverMenu extends AppCompatActivity {
 
         Button hereBtn = findViewById(R.id.hereBtn);
         hereBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(DriverMenu.this, DriverSearch.class);
+            Intent intent = new Intent(DriverMenu.this, ConfirmPayment.class);
             intent.putStringArrayListExtra("activePassengers", activePassengers);
             startActivity(intent);
             finish();

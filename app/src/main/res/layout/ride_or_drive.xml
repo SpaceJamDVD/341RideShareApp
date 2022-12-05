@@ -79,19 +79,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
 
-    <Button
-        android:id="@+id/needHelp"
-        android:backgroundTint="@color/primary_color"
+    <TextView
+        android:id="@+id/needHelpBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="need help?"
-        android:autoLink="all"
+        android:text="@string/help_text"
         android:textColor="@color/primary_black"
         android:textSize="16sp"
         android:onClick="needHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
